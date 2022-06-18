@@ -19,7 +19,11 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port:     <%= ENV.fetch("POSTGRESQL_PORT", "5432") %>
+  pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("POSTGRESQL_USER_NAME", "bon") %>
+  password: <%= ENV.fetch("POSTGRESQL_PASSWORD", "1234567890") %>
+  host:     <%= ENV['POSTGRESQL_HOST'] %>
 
 development:
   <<: *default

@@ -4,7 +4,7 @@ class CreateProperties < ActiveRecord::Migration[7.0]
       t.string :city
       t.string :price
       t.string :status
-      t.string :type
+      t.string :typeProperty
       t.string :address
       t.string :imageUrl
       t.timestamps

@@ -3,5 +3,6 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def show
+    render json: status: 200, message: 'success'
   end
 end
